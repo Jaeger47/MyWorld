@@ -27,6 +27,7 @@ video {
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
+  
 }
 
 .myDiv h2 {
@@ -37,7 +38,8 @@ video {
 
 
 .centerImg2 {
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
 
 }
@@ -56,8 +58,10 @@ video {
 	display:block;
 	
 	max-width: 100%;
-	width: 480px;
-	height: 360px;
+	max-width: 500px;
+	max-height: 400px;
 }
+
+
 
 
