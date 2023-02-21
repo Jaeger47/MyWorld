@@ -131,20 +131,31 @@
 	<br/><br/>
 </div>
 
-<audio autoplay loop id="bgm">
-	<source  src="sounds/bgm.mp3" type="audio/mp3" onplay="handleFirstPlay(event)">
-</audio>
 <audio autoplay loop id="zoom">
 	<source  src="sounds/boon_loop.wav" type="audio/wav" onplay="handleFirstPlay(event)">
+</audio>
+
+<audio id="layer_main">
+	<source  src="sounds/layers/layer_home.ogg" type="audio/ogg">
 </audio>
 
 <script src="../script.js"></script>
 <script>
 	var audio_zoom = document.getElementById("zoom");
-		audio_zoom.volume = 0.3;
-	var audio_zoom = document.getElementById("bgm");
-		audio_zoom.volume = 0.3;
+		audio_zoom.volume = 0.5;
+	
+	var audio_layer = document.getElementById("layer_main");
+		audio_layer.volume = 0.8;
+
+		function delay() {
+			setTimeout(function() {
+				audio_layer.play();
+			}, 1000);
+		}
+		delay();
 </script>
+
+
 
 <script src="script.js"></script>
 
