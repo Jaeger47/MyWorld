@@ -16,7 +16,7 @@ body {
 
 @font-face {
   font-family: mySecondFont;
-  src: url(fonts/homespun.ttf);
+  src: url(fonts/Lovelt__.ttf);
 }
 
 #portal, button{
@@ -65,10 +65,6 @@ body {
   position: relative;
 }
 
-
-a {
-	text-decoration: none;
-}
 
 .title h1{
 	font-family: myFirstFont;
@@ -296,4 +292,29 @@ a {
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
 }
+
+:root {
+  --mainColor: #000564;
+}
+
+a {
+  text-decoration: none;
+  background:
+     linear-gradient(
+       to bottom,
+       var(--mainColor) 0%,
+       var(--mainColor) 100%
+     );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  text-decoration: none;
+  color:aqua;
+  transition: background-size .2s;
+}
+
+a:hover {
+  background-size: 4px 50px;
+}
+
 
