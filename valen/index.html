@@ -5,17 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beibu</title>
 	
-	 <style>
+    <style>
         @font-face {
             font-family: 'Lovelt__';
             src: url('../fonts/Lovelt__.ttf') format('truetype'); 
         }
+        body {
+            background: url("bg205.gif") repeat; /* Repeats the background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 20px; /* Space between the items */
+            align-items: center;
+            text-align: center;
+        }
+        .lock-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .lock-item img {
+            width: 180px; /* Adjust image size */
+            height: auto;
+        }
+        h4 {
+            color: white;
+            font-family: 'Lovelt__', sans-serif;
+            margin-top: 10px;
+        }
     </style>
 </head>
-<body background="bg205.gif">
-    <div style="width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-        <img src="lock.gif" alt="Animated GIF">
-        <h3 style="color: white;font-family: 'Lovelt__', sans-serif;">Unlocked by Feb. 10, 2025</h3>
+<body>
+    <div class="container">
+        <div class="lock-item">
+            <img src="lock.gif" alt="Lock Image">
+            <h4>Feb. 10, 2025</h4>
+        </div>
+        <div class="lock-item">
+            <img src="lock.gif" alt="Lock Image">
+            <h4>Feb. 11, 2025</h4>
+        </div>
+        <div class="lock-item">
+            <img src="lock.gif" alt="Lock Image">
+            <h4>Feb. 12, 2025</h4>
+        </div>
+		<div class="lock-item">
+            <img src="lock.gif" alt="Lock Image">
+            <h4>Feb. 13, 2025</h4>
+        </div>
+		<div class="lock-item">
+            <img src="lock.gif" alt="Lock Image">
+            <h4>Feb. 14, 2025</h4>
+        </div>
     </div>
 </body>
 </html>
