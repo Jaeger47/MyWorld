@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beibu</title>
+    
+    <style>
+        @font-face {
+            font-family: 'Lovelt__';
+            src: url('../fonts/Lovelt__.ttf') format('truetype'); 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lovelt__', sans-serif;
+            flex-direction: column;
+            overflow: hidden; /* Prevents scrolling due to falling hearts */
+            background-color: #000;
+        }
+
+        .password-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .password-container h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 90%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .lock-item img {
+            width: 80%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        h4 {
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* SoundCloud embed */
+        .soundcloud-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 166px;
+            border: none;
+        }
+
+        /* Falling Hearts Animation */
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 10px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        @media (min-width: 600px) {
+            h4 {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            h4 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="password-container" id="password-container">
+        <h3>Enter Password</h3>
+        <input type="password" id="password" placeholder="Enter password">
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div class="container" id="content">
+        <div class="lock-item">
+            <img src="day1.jpg" alt="Gift Image">
+            <h4>
+                A rose as delicate as my feelings for you,<br/>
+                soft, sweet, and full of admiration.<br/>
+                With each petal,<br/>
+                I express my appreciation for having you in my life.<br/><br/>
+                (Claim gift after date)
+            </h4>
+        </div>
+
+        <!-- SoundCloud Embed -->
+        <div class="soundcloud-container" id="soundcloud-container">
+            <iframe 
+                id="soundcloud-player"
+                width="100%" 
+                height="166" 
+                scrolling="no" 
+                frameborder="no" 
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-867940823/mai-yamane-you-and-me-still-keep-on-fall-in-love&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "LoVe"; 
+            const inputPassword = document.getElementById("password").value;
+
+            if (inputPassword === correctPassword) {
+                document.getElementById("password-container").style.display = "none";
+                document.getElementById("content").style.display = "flex";
+                document.getElementById("soundcloud-container").style.display = "block"; 
+
+                createHearts(); // Start heart animation
+            } else {
+                alert("Incorrect password. Try again.");
+            }
+        }
+
+        // Function to create falling hearts
+        function createHearts() {
+            setInterval(() => {
+                const heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.classList.add("heart");
+
+                // Randomize position and size
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.fontSize = Math.random() * 20 + 10 + "px";
+                heart.style.animationDuration = Math.random() * 3 + 2 + "s"; 
+
+                document.body.appendChild(heart);
+
+                // Remove hearts after animation ends
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>

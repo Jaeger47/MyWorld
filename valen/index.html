@@ -4,48 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beibu</title>
-	
+    
     <style>
         @font-face {
             font-family: 'Lovelt__';
             src: url('../fonts/Lovelt__.ttf') format('truetype'); 
         }
+
         body {
-            background: url("bg205.gif") repeat; /* Repeats the background */
+            background: url("bg205.gif") repeat;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
+
         .container {
             display: flex;
-            gap: 20px; /* Space between the items */
-            align-items: center;
+            flex-wrap: wrap; /* Allows items to wrap on small screens */
+            gap: 15px; /* Space between items */
+            justify-content: center; /* Centers items */
             text-align: center;
+            max-width: 90vw; /* Prevents overflow on small screens */
         }
+
         .lock-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100px; /* Adjust width for better mobile fit */
         }
+
         .lock-item img {
-            width: 180px; /* Adjust image size */
+            width: 80px; /* Smaller image size for mobile */
             height: auto;
         }
+
         h4 {
             color: white;
             font-family: 'Lovelt__', sans-serif;
-            margin-top: 10px;
+            margin-top: 5px;
+            font-size: 14px; /* Adjust text size for readability */
+        }
+
+        /* Make links inherit text color and remove underline */
+        .lock-item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 600px) {
+            .lock-item {
+                width: 120px;
+            }
+            .lock-item img {
+                width: 100px;
+            }
+            h4 {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+            }
+            .lock-item {
+                width: 150px;
+            }
+            .lock-item img {
+                width: 130px;
+            }
+            h4 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Linked Feb 10 image & text to day1.html -->
         <div class="lock-item">
-            <img src="lock.gif" alt="Lock Image">
-            <h4>Feb. 10, 2025</h4>
+            <a href="day1.html">
+                <img src="gift.png" alt="Gift Image">
+                <h4>Feb. 10, 2025</h4>
+            </a>
         </div>
+        
         <div class="lock-item">
             <img src="lock.gif" alt="Lock Image">
             <h4>Feb. 11, 2025</h4>
@@ -54,11 +103,11 @@
             <img src="lock.gif" alt="Lock Image">
             <h4>Feb. 12, 2025</h4>
         </div>
-		<div class="lock-item">
+        <div class="lock-item">
             <img src="lock.gif" alt="Lock Image">
             <h4>Feb. 13, 2025</h4>
         </div>
-		<div class="lock-item">
+        <div class="lock-item">
             <img src="lock.gif" alt="Lock Image">
             <h4>Feb. 14, 2025</h4>
         </div>
