@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Secret Page</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #ff4d6d;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #ff4d6d;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d63a58;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: #ff4d6d;
+            animation: fall 3s infinite linear;
+        }
+        @keyframes fall {
+            0% { top: -10%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💕 Enter the Secret Valentine's Code 💕</h1>
+    <div class="container">
+        <input type="password" id="password" placeholder="Enter Password">
+        <br>
+        <button onclick="checkPassword()">Unlock</button>
+        <p id="message" style="color: red; display: none;">Wrong password! Try again.</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "suKi"; // Set your desired password
+            let inputPassword = document.getElementById("password").value;
+
+            if (inputPassword === correctPassword) {
+                window.location.href = "ani.html"; // Redirect to the next page
+            } else {
+                document.getElementById("message").style.display = "block";
+            }
+        }
+
+        // Create falling heart effect
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.classList.add("hearts");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s"; 
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
