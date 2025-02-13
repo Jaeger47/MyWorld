@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Access</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      color: #d6336c;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      border: 2px solid #d6336c;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #d6336c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #a1274d;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Enter the Love Code</h1>
+    <form onsubmit="return checkPassword();">
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <br>
+      <input type="submit" value="Unlock">
+    </form>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      // Retrieve the entered password
+      const password = document.getElementById("password").value;
+      // Set your desired password (e.g., "valentine")
+      const correctPassword = "Ai";
+
+      if (password === correctPassword) {
+        // Redirect to the next page if the password is correct
+        window.location.href = "./ani";
+      } else {
+        // Display an error message if the password is incorrect
+        document.getElementById("errorMsg").innerText = "Incorrect password. Try again!";
+      }
+      // Prevent form submission
+      return false;
+    }
+  </script>
+</body>
+</html>
