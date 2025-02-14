@@ -317,6 +317,7 @@ body {
 }</style></head>
 
   <body>
+  <button onclick="document.getElementById('myAudio').play()" class="nine">>Play Audio</button>
     <div class="container">
       <div class="one">
         <h1 class="one">
@@ -423,6 +424,7 @@ body {
         <p class="last-smile">:)</p>
       </div>
     </div>
+	
   <script type="text/babel"  src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
   <script type="text/babel" src="https://www.codewithfaraz.com/preview/script.js"></script>
@@ -704,6 +706,17 @@ const animationTimeline = () => {
 };
 
 animationTimeline();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9113d0920ba30958',t:'MTczOTQzOTE4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='https://www.codewithfaraz.com/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+<script>
+      <script>
+        var audio = new Audio("tele.mp3"); // Replace with your audio file
+        audio.loop = true;  // Loops the audio indefinitely
+
+        function playAudio() {
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+        }
+        
+    </script>
 
 <!-- Mirrored from www.codewithfaraz.com/preview/valentines-day-animation-with-html-css-and-javascript by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Feb 2025 09:33:03 GMT -->
 </html>
